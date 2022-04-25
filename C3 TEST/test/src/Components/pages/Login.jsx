@@ -9,7 +9,11 @@ import { Form } from "./EditBookData";
 
 // add input styling
 export const Input = styled.input`
- 
+ width: 30%;
+ padding: 8px;
+ background-color: #9bbabd;
+ margin-top: 15px;
+ border-radius: 5px;
 `;
 
 
@@ -32,21 +36,30 @@ export const Login = () => {
   return (
     <>
       <Form onSubmit={handleSubmit}>
+        <div>
         <Input
           data-testid="login-form-email"
           placeholder="Enter Email"
           value={email}
+          name="email"
           type="text"
           onChange={(e) => setEmail(e.target.value)}
         />
+        </div>
+        <div>
         <Input
           data-testid="login-form-password"
           placeholder="Enter Password"
           value={password}
+          name="password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        </div>
+        
+       <div>
         <Input value = "Login" type={"submit"} data-testid="login-form-submit" />
+        </div>
       </Form>
     </>
   );
